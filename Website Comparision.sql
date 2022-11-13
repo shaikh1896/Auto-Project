@@ -5,7 +5,7 @@ SELECT Link,Brand,model,lower(substr(replace(model,' ',''),0,4)) as model_modifi
 safe_divide(Price*(safe_Cast(trim(Mileage,'km') as int64)),safe_cast(Year as int64))*1000000  Score FROM `eminent-wares-365211.Vehicles_comp.First_site` 
 Union all
 SELECT Link,Brand,model,model as model_modified,Price,Year,Mileage,safe_Cast(replace(trim(Mileage,'km'),' ','') as int64) as Mileage_Transformed,
-safe_divide(Price*(safe_Cast(replace(trim(Mileage,'km'),' ','') as int64) ),safe_cast(Year as int64))*1000000  Score,FROM `eminent-wares-365211.Vehicles_comp.Second_site` 
+safe_divide(Price*(safe_Cast(replace(trim(Mileage,'km'),' ','') as int64) ),safe_cast(Year as int64))*1000000  Score,FROM `ProjectABC.Vehicles_comp.Second_site` 
 where model is not null
 )
 
